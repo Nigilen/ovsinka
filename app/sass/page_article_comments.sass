@@ -1,0 +1,140 @@
+.comments
+  margin-bottom: 100px
+
+.comments__form
+  display: grid
+  grid-template-columns: 1fr 1fr
+  grid-template-rows: auto auto auto auto auto
+  gap: 14px
+  margin-bottom: 30px
+
+.comments__form p
+  margin: 0
+
+.comments__title
+  font-size: 20px
+  font-weight: 400
+  color: #171717
+  
+.comments__description
+  font-size: 14px
+  color: #999999
+
+.comments-field
+  display: flex
+  flex-direction: column-reverse
+
+.comments-field__label
+  margin-bottom: 4px
+
+.comments-field__item
+  border: 1px solid #C8C8C8
+  border-radius: 10px
+  padding: 0.75rem 1rem
+  width: 100%
+  box-sizing: border-box
+  font-family: Harmonia
+
+.comments__textarea
+  grid-row-start: 1
+  grid-row-end: 2
+  grid-column-start: 1
+  grid-column-end: -1
+
+.comments__input-name
+  grid-row-start: 2
+  grid-row-end: 3
+  grid-column-start: 1
+  grid-column-end: 2
+
+.comments__input-mail
+  grid-row-start: 2
+  grid-row-end: 3
+  grid-column-start: 2
+  grid-column-end: 3
+
+.comments__checkbox
+  display: grid
+  grid-template-columns: auto auto
+  grid-row-start: 3
+  grid-row-end: 4
+  grid-column-start: 1
+  grid-column-end: -1
+  font-size: 14px
+  color: #999999
+  justify-self: start
+  align-items: center
+
+.comments__checkbox input
+  margin: 0
+  height: 1.25rem
+  width: 1.25rem
+
+.comments__checkbox label
+  margin-left: 8px
+  padding-top: 3px
+  line-height: 15px
+
+.comments__button
+  grid-row-start: 4
+  grid-row-end: 5
+  grid-column-start: 1
+  grid-column-end: -1
+  padding: 15px 30px
+  background-color: #9A94E0
+  color: #ffffff
+  border-radius: 50px
+  justify-self: start
+  cursor: pointer
+
+.user-comments-container
+  display: flex
+  flex-direction: column
+  gap: 22px
+
+.user-comments__title
+  font-weight: 400
+
+.user__details
+  border: 1px solid #E5E7EB
+  border-radius: 10px
+  padding: 17px
+  display: flex
+  flex-direction: column
+
+.user-details__line
+  display: flex
+  gap: 10px
+  align-items: center
+  margin-bottom: 8px
+
+.user__name
+  margin: 0
+  font-size: 14px
+  
+.user__date
+  font-size: 12px
+  color: #6B7280
+
+.user__comment
+  margin: 0
+  font-size: 14px
+
+
+@media ( min-width: 1024px ) 
+  
+  .user__details
+    width: 100%
+
+  .user-details__line
+    margin-bottom: 12px
+    gap: 10px
+
+  .user__name
+    font-size: 16px
+  
+  .user__date
+    font-size: 14px
+
+  .user__comment
+    font-size: 16px

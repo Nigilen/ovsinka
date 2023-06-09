@@ -1,0 +1,88 @@
+.last-posts__list
+  display: flex
+  gap: 16px
+  width: max-content
+
+
+.last-posts__img-wrapper
+  margin: 0
+
+.last-posts__img
+  display: block
+  width: 100%
+  border-radius: 20px 20px 10px 10px
+
+.last-posts__title
+  margin: 10px 0px 15px 0px
+  font-size: 20px
+  font-weight: normal
+  color: #171717
+
+.last-posts__description
+  display: none
+
+.last-posts__wrapper
+  background-color: #F9F9F9
+  max-width: 300px
+  border-radius: 20px
+
+.last-posts__details
+  padding: 16px
+
+.last-posts__buttons
+  display: none
+  gap: 10px
+  
+
+.last-posts__button
+  width: 38px
+  height: 38px
+  border-radius: 100px
+  border: 1px solid #d4d4d4
+  cursor: pointer
+
+
+.last-posts__button--left
+  display: flex
+  justify-content: center
+  align-items: center
+  padding-right: 2px
+
+.last-posts__button--right
+  display: flex
+  justify-content: center
+  align-items: center
+  padding-left: 2px
+
+
+@media ( min-width: 1024px )
+
+  .last-posts__buttons
+    display: flex
+
+
+  .last-posts__wrapper
+    max-width: 700px
+    display: flex
+
+  .last-posts__img-wrapper
+    max-width: 244px
+    width: 100%
+
+  .last-posts__img
+    display: block
+    width: 100%
+    border-radius: 10px
+  
+  .last-posts__description
+    display: block
+    color: #666666
+    font-size: 16px
+    margin-bottom: 35px
+
+  .last-posts__details
+    padding: 35px   
+
+  .last-posts__title
+    margin: 0px 0px 20px 0px
+

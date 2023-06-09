@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dushnilov</title>
+  <link rel="icon" type="image/png" sizes="16x16" href="/app/img/fav/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/app/img/fav/favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/app/img/fav/favicon-180x180.png">
+  <link rel="manifest" href="/app/img/fav/site.webmanifest">
+  <link rel="stylesheet" href="/app/css/style.css">
+</head>
+<body>
+  <svg class="visually-hidden" width="0" height="0">
+    <defs>
+      <symbol id="burger-close" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14" >
+        <line x1="1.46112" y1="1.46967" x2="13.1738" y2="13.1824" stroke="#171717" stroke-width="1.5"></line>
+        <line x1="1.58356" y1="13.4692" x2="13.2962" y2="1.7565" stroke="#171717" stroke-width="1.5"></line>
+      </symbol>
+      <symbol id="burger" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 17" >
+        <rect width="6.8" height="6.8" rx="3.4" fill="black"></rect>
+        <rect x="10.2" width="6.8" height="6.8" rx="3.4" fill="black"></rect>
+        <rect y="10.2002" width="6.8" height="6.8" rx="3.4" fill="black"></rect>
+        <rect x="10.2" y="10.2002" width="6.8" height="6.8" rx="3.4" fill="black"></rect>
+      </symbol>
+      <symbol id="search-icon" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-width="1.5" stroke="currentColor" aria-hidden="true" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"></path>
+      </symbol>
+      <symbol fill="#666666" id="icon-eye" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+        <path d="M243.65527,126.37561c-.33886-.7627-8.51172-18.8916-26.82715-37.208-16.957-16.96-46.13281-37.17578-88.82812-37.17578S56.12891,72.20764,39.17188,89.1676c-18.31543,18.31641-26.48829,36.44531-26.82715,37.208a3.9975,3.9975,0,0,0,0,3.249c.33886.7627,8.51269,18.88672,26.82715,37.19922,16.957,16.95606,46.13378,37.168,88.82812,37.168s71.87109-20.21191,88.82812-37.168c18.31446-18.3125,26.48829-36.43652,26.82715-37.19922A3.9975,3.9975,0,0,0,243.65527,126.37561Zm-32.6914,34.999C187.88965,184.34534,159.97656,195.99182,128,195.99182s-59.88965-11.64648-82.96387-34.61719a135.65932,135.65932,0,0,1-24.59277-33.375A135.63241,135.63241,0,0,1,45.03711,94.61584C68.11133,71.64123,96.02344,59.99182,128,59.99182s59.88867,11.64941,82.96289,34.624a135.65273,135.65273,0,0,1,24.59375,33.38379A135.62168,135.62168,0,0,1,210.96387,161.37463ZM128,84.00061a44,44,0,1,0,44,44A44.04978,44.04978,0,0,0,128,84.00061Zm0,80a36,36,0,1,1,36-36A36.04061,36.04061,0,0,1,128,164.00061Z"></path>
+      </symbol>
+      <symbol fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="icon-like">
+        <path d="M9 9M12 6.59097L11.8456 6.42726C9.86801 4.33053 6.59738 4.57698 4.91934 6.94915C3.42999 9.05459 3.78668 12.0335 5.725 13.6776L12 19L18.275 13.6776C20.2133 12.0335 20.57 9.05459 19.0807 6.94915C17.4026 4.57697 14.132 4.33053 12.1544 6.42726L12 6.59097Z" stroke="#666666" stroke-linecap="round" stroke-linejoin="round"></path>
+      </symbol>
+      <symbol fill="#000000" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" id="icon-arrow-left">
+        <path d="M23.505 0c0.271 0 0.549 0.107 0.757 0.316 0.417 0.417 0.417 1.098 0 1.515l-14.258 14.264 14.050 14.050c0.417 0.417 0.417 1.098 0 1.515s-1.098 0.417-1.515 0l-14.807-14.807c-0.417-0.417-0.417-1.098 0-1.515l15.015-15.022c0.208-0.208 0.486-0.316 0.757-0.316z"></path>
+      </symbol>
+      <symbol fill="#000000" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" id="icon-arrow-right">
+        <path d="M8.489 31.975c-0.271 0-0.549-0.107-0.757-0.316-0.417-0.417-0.417-1.098 0-1.515l14.258-14.264-14.050-14.050c-0.417-0.417-0.417-1.098 0-1.515s1.098-0.417 1.515 0l14.807 14.807c0.417 0.417 0.417 1.098 0 1.515l-15.015 15.022c-0.208 0.208-0.486 0.316-0.757 0.316z"></path>
+      </symbol>
+      <symbol fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="icon-arrow-up">
+        <path d="M12.7071 2.29289C12.3166 1.90237 11.6834 1.90237 11.2929 2.29289L7.29289 6.29289C6.90237 6.68342 6.90237 7.31658 7.29289 7.70711C7.68342 8.09763 8.31658 8.09763 8.70711 7.70711L11 5.41421L11 21C11 21.5523 11.4477 22 12 22C12.5523 22 13 21.5523 13 21L13 5.41421L15.2929 7.70711C15.6834 8.09763 16.3166 8.09763 16.7071 7.70711C17.0976 7.31658 17.0976 6.68342 16.7071 6.29289L12.7071 2.29289Z" fill="#ffffff"></path>
+      </symbol>
+      <symbol xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" viewBox="0 0 256 256" id="icon-telegram">
+        <g>
+          <path d="M128,0 C57.307,0 0,57.307 0,128 L0,128 C0,198.693 57.307,256 128,256 L128,256 C198.693,256 256,198.693 256,128 L256,128 C256,57.307 198.693,0 128,0 L128,0 Z" fill="#40B3E0"></path>
+          <path d="M190.2826,73.6308 L167.4206,188.8978 C167.4206,188.8978 164.2236,196.8918 155.4306,193.0548 L102.6726,152.6068 L83.4886,143.3348 L51.1946,132.4628 C51.1946,132.4628 46.2386,130.7048 45.7586,126.8678 C45.2796,123.0308 51.3546,120.9528 51.3546,120.9528 L179.7306,70.5928 C179.7306,70.5928 190.2826,65.9568 190.2826,73.6308" fill="#FFFFFF"></path>
+          <path d="M98.6178,187.6035 C98.6178,187.6035 97.0778,187.4595 95.1588,181.3835 C93.2408,175.3085 83.4888,143.3345 83.4888,143.3345 L161.0258,94.0945 C161.0258,94.0945 165.5028,91.3765 165.3428,94.0945 C165.3428,94.0945 166.1418,94.5735 163.7438,96.8115 C161.3458,99.0505 102.8328,151.6475 102.8328,151.6475" fill="#D2E5F1"></path>
+          <path d="M122.9015,168.1154 L102.0335,187.1414 C102.0335,187.1414 100.4025,188.3794 98.6175,187.6034 L102.6135,152.2624" fill="#B5CFE4"></path>
+        </g>
+      </symbol>
+      <symbol fill="#1876D1" id="icon-vk" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" stroke="#1876D1" viewBox="0 0 97.75 97.75">
+        <g>
+          <path d="M48.875,0C21.883,0,0,21.882,0,48.875S21.883,97.75,48.875,97.75S97.75,75.868,97.75,48.875S75.867,0,48.875,0z M73.667,54.161c2.278,2.225,4.688,4.319,6.733,6.774c0.906,1.086,1.76,2.209,2.41,3.472c0.928,1.801,0.09,3.776-1.522,3.883 l-10.013-0.002c-2.586,0.214-4.644-0.829-6.379-2.597c-1.385-1.409-2.67-2.914-4.004-4.371c-0.545-0.598-1.119-1.161-1.803-1.604 c-1.365-0.888-2.551-0.616-3.333,0.81c-0.797,1.451-0.979,3.059-1.055,4.674c-0.109,2.361-0.821,2.978-3.19,3.089 c-5.062,0.237-9.865-0.531-14.329-3.083c-3.938-2.251-6.986-5.428-9.642-9.025c-5.172-7.012-9.133-14.708-12.692-22.625 c-0.801-1.783-0.215-2.737,1.752-2.774c3.268-0.063,6.536-0.055,9.804-0.003c1.33,0.021,2.21,0.782,2.721,2.037 c1.766,4.345,3.931,8.479,6.644,12.313c0.723,1.021,1.461,2.039,2.512,2.76c1.16,0.796,2.044,0.533,2.591-0.762 c0.35-0.823,0.501-1.703,0.577-2.585c0.26-3.021,0.291-6.041-0.159-9.05c-0.28-1.883-1.339-3.099-3.216-3.455 c-0.956-0.181-0.816-0.535-0.351-1.081c0.807-0.944,1.563-1.528,3.074-1.528l11.313-0.002c1.783,0.35,2.183,1.15,2.425,2.946 l0.01,12.572c-0.021,0.695,0.349,2.755,1.597,3.21c1,0.33,1.66-0.472,2.258-1.105c2.713-2.879,4.646-6.277,6.377-9.794 c0.764-1.551,1.423-3.156,2.063-4.764c0.476-1.189,1.216-1.774,2.558-1.754l10.894,0.013c0.321,0,0.647,0.003,0.965,0.058 c1.836,0.314,2.339,1.104,1.771,2.895c-0.894,2.814-2.631,5.158-4.329,7.508c-1.82,2.516-3.761,4.944-5.563,7.471 C71.48,50.992,71.611,52.155,73.667,54.161z"></path>
+        </g>
+      </symbol>
+    </defs>
+  </svg>
+
+  <header class="header">
+    <nav class="header__nav container">
+      <a class="logo" href="#">
+        <img class="logo__img" src="/app/img/Dushnilov.svg" alt="Логотип Dushnilov">
+      </a>
+      <ul class="site-nav">
+        <li class="site-nav__item site-nav__link--active">
+          <a class="site-nav__link" href="#">
+            Спорт
+          </a>
+        </li>
+        <li class="site-nav__item"> 
+          <a class="site-nav__link" href="#">
+            Еда
+          </a>
+        </li>
+        <li class="site-nav__item">
+          <a class="site-nav__link" href="#">
+            Жизнь
+          </a>
+        </li>
+      </ul>
+      <ul class="user-nav">
+        <li class="user-nav__item">
+          <button class="header-search__button" type="button" aria-label="Открыть страницу поиска">
+            <svg class="search-icon" aria-hidden="true">
+              <use xlink:href="#search-icon"></use>
+            </svg>
+          </button>
+        </li>
+        <li class="user-nav__item">
+          <button class="burger" type="button" aria-label="Открыть меню">
+            <svg class="burger-icon burger-icon--open" aria-hidden="true">
+              <use xlink:href="#burger"></use>
+            </svg>          
+            <svg class="burger-icon burger-icon--close" aria-hidden="true">
+              <use xlink:href="#burger-close"></use>
+            </svg>
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="main">
+    <h1 class="visually-hidden">Блог о здоровом образе жизни</h1>
+    <section class="banner-slider section">
+      <div class="container">
+        <div class="banner-slider__container">
+          <h2 class="section__heading section__heading-line">Статьи дня</h2>
+          <ul class="banner-slider__list">
+            <li class="banner-slider__item">
+              <article class="banner-slider__wrapper">
+                <a href="#" class="banner-slider__img-wrapper">
+                  <img class="banner-slider__img" src="/app/img/img-banner-slider.png" alt="">
+                </a>
+                <div class="banner-slider__details">
+                  <div class="bg-blur"></div>
+                  <a href="#" class="banner-slider__details-category">Раздел</a>
+                  <h3 class="banner-slider__details-title">
+                    <a href="#">Утренний фитнес перед работой: длительность, необходимость и качество</a>
+                  </h3>   
+                  <ul class="reactions">
+                    <li class="reaction-item">
+                      <svg class="reaction-icon" width="14" height="14" aria-hidden="true">
+                        <use xlink:href="#icon-like"></use>
+                      </svg>
+                      <span class="reaction-cntr" aria-label="Лайков">23</span>
+                    </li>
+                    <li class="reaction-item">
+                      <svg class="reaction-icon" width="14" height="14" aria-hidden="true">
+                        <use xlink:href="#icon-eye"></use>
+                      </svg>
+                      <span class="reaction-cntr" aria-label="Просмотров">643</span>
+                    </li>
+                  </ul>
+                </div>
+              </article>
+            </li>
+          </ul>
+          <div class="banner-slider-controls">
+            <button class="banner-slider__control banner-slider__control-left" type="button" aria-label="Предыдущий слайд">
+              <svg width="15" height="15" aria-hidden="true">
+                <use xlink:href="#icon-arrow-left"></use>
+              </svg>
+            </button>
+            <button class="banner-slider__control banner-slider__control-right" type="button" aria-label="Следующий слайд">
+              <svg width="15" height="15" aria-hidden="true">
+                <use xlink:href="#icon-arrow-right"></use>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section__heading-line">
+          <h2 class="section__heading">Еда</h2>
+          <a class="section__view-all" href="#">смотреть все</a>
+        </div>
+        <ul class="category-grid category-grid--food">
+          <li>
+            <article>
+              <a class="category-main-card" href="#"> 
+                <div class="category-main-card__details category-main-card__details--food">
+                  <h3 class="category-main-card__title category-main-card__title--food">Орехи: польза, вред, как выбрать и как употреблять</h3>
+                  <ul class="reactions">
+                    <li class="reaction-item">
+                      <svg class="reaction-icon" width="14" height="14" aria-hidden="true">
+                        <use xlink:href="#icon-like"></use>
+                      </svg>
+                      <span class="reaction-cntr" aria-label="Лайков">23</span>
+                    </li>
+                    <li class="reaction-item">
+                      <svg class="reaction-icon" width="14" height="14" aria-hidden="true">
+                        <use xlink:href="#icon-eye"></use>
+                      </svg>
+                      <span class="reaction-cntr" aria-label="Просмотров">643</span>
+                    </li>
+                  </ul>
+                </div>
+                <img class="category-main-card__img" src="/app/img/woman-sport-joga.png" alt="">
+              </a>
+            </article>
+          </li>
+          <li>
+            <article>
+              <a class="category-line-card category-line-card--food" href="#">
+      
+                <div class="category-line-card__details category-line-card__details--food">
+      
+                  <h3 class="category-line-card__title category-line-card__title--food">Орехи: польза, вред, как выбрать и как употреблять</h3>
+                  
+                  <ul class="reactions">
+                    <li class="reaction-item">
+                      <svg class="reaction-icon" width="14" height="14" aria-hidden="true">
+                        <use xlink:href="#icon-like"></use>
+                      </svg>
+                      <span class="reaction-cntr" aria-label="Лайков">23</span>
+                    </li>
+                    <li class="reaction-item">
+                      <svg class="reaction-icon" width="14" height="14" aria-hidden="true">
+                        <use xlink:href="#icon-eye"></use>
+                      </svg>
+                      <span class="reaction-cntr" aria-label="Просмотров">643</span>
+                    </li>
+                  </ul>
+      
+                </div>
+      
+                <div class="category-line-card__img-wrapper--food">
+                  <img class="category-line-card__img category-line-card__img--food" src="/app/img/woman-sport-joga.png" alt="">
+                </div>
+              </a>
+            </article>
+          </li>
+          <li>
+            <article>
+              <a class="category-line-card category-line-card--food" href="#">
+      
+                <div class="category-line-card__details category-line-card__details--food">
+      
+                  <h3 class="category-line-card__title category-line-card__title--food">Орехи: польза, вред, как выбрать и как употреблять</h3>
+                  
+                  <ul class="reactions">
+                    <li class="reaction-item">
+                      <svg class="reaction-icon" width="14" height="14" aria-hidden="true">
+                        <use xlink:href="#icon-like"></use>
+                      </svg>
+                      <span class="reaction-cntr" aria-label="Лайков">23</span>
+                    </li>
+                    <li class="reaction-item">
+                      <svg class="reaction-icon" width="14" height="14" aria-hidden="true">
+                        <use xlink:href="#icon-eye"></use>
+                      </svg>
+                      <span class="reaction-cntr" aria-label="Просмотров">643</span>
+                    </li>
+                  </ul>
+      
+                </div>
+      
+                <div class="category-line-card__img-wrapper--food">
+                  <img class="category-line-card__img category-line-card__img--food" src="/app/img/woman-sport-joga.png" alt="">
+                </div>
+              </a>
+            </article>
+          </li>
+          <li>
+            <article>
+              <a class="category-line-card category-line-card--food" href="#">
+      
+                <div class="category-line-card__details category-line-card__details--food">
+      
+                  <h3 class="category-line-card__title category-line-card__title--food">Орехи: польза, вред, как выбрать и как употреблять</h3>
+                  
+                  <ul class="reactions">
+                    <li class="reaction-item">
+                      <svg class="reaction-icon" width="14" height="14" aria-hidden="true">
+                        <use xlink:href="#icon-like"></use>
+                      </svg>
+                      <span class="reaction-cntr" aria-label="Лайков">23</span>
+                    </li>
+                    <li class="reaction-item">
+                      <svg class="reaction-icon" width="14" height="14" aria-hidden="true">
+                        <use xlink:href="#icon-eye"></use>
+                      </svg>
+                      <span class="reaction-cntr" aria-label="Просмотров">643</span>
+                    </li>
+                  </ul>
+      
+                </div>
+      
+                <div class="category-line-card__img-wrapper--food">
+                  <img class="category-line-card__img category-line-card__img--food" src="/app/img/woman-sport-joga.png" alt="">
+                </div>
+              </a>
+            </article>
+          </li>
+          <li>
+            <article>
+              <a class="category-line-card category-line-card--food" href="#">
+      
+                <div class="category-line-card__details category-line-card__details--food">
+      
+                  <h3 class="category-line-card__title category-line-card__title--food">Орехи: польза, вред, как выбрать и как употреблять</h3>
+                  
+                  <ul class="reactions">
+                    <li class="reaction-item">
+                      <svg class="reaction-icon" width="14" height="14" aria-hidden="true">
+                        <use xlink:href="#icon-like"></use>
+                      </svg>
+                      <span class="reaction-cntr" aria-label="Лайков">23</span>
+                    </li>
+                    <li class="reaction-item">
+                      <svg class="reaction-icon" width="14" height="14" aria-hidden="true">
+                        <use xlink:href="#icon-eye"></use>
+                      </svg>
+                      <span class="reaction-cntr" aria-label="Просмотров">643</span>
+                    </li>
+                  </ul>
+      
+                </div>
+      
+                <div class="category-line-card__img-wrapper--food">
+                  <img class="category-line-card__img category-line-card__img--food" src="/app/img/woman-sport-joga.png" alt="">
+                </div>
+              </a>
+            </article>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+
+    <section class="section">
+      <div class="container">
+        <div class="section__heading-line">
+          <h2 class="section__heading">Спорт</h2>
+          <a class="section__view-all" href="#">смотреть все</a>
+        </div>
+        <ul class="category-grid category-grid--sport">
+          <li>
+            <article>
+              <a class="category-main-card category-main-card--sport" href="#"> 
+                <div class="category-main-card__details category-main-card__details--sport">
+                  <h3 class="category-main-card__title category-main-card__title--sport">Орехи: польза, вред, как выбрать и как употреблять</h3>
+    
+                  <ul class="reactions">
+                    <li class="reaction-item">
+                      <svg class="reaction-icon" width="14" height="14" aria-hidden="true">
+                        <use xlink:href="#icon-like"></use>
+                      </svg>
+                      <span class="reaction-cntr" aria-label="Лайков">23</span>
+                    </li>
+                    <li class="reaction-item">
+                      <svg class="reaction-icon" width="14" height="14" aria-hidden="true">
+                        <use xlink:href="#icon-eye"></use>
+                      </svg>
+                      <span class="reaction-cntr" aria-label="Просмотров">643</span>
+                    </li>
+                  </ul>
+    
+                </div>
+                <img class="category-main-card__img" src="/app/img/woman-sport-joga.png" alt="">
+              </a>
+            </article>
+          </li>
+          <li>
+            <article>
+              <a class="category-line-card category-line-card--sport" href="#">
+                <div class="category-line-card__details category-line-card__details--sport">
+                  <h3 class="category-line-card__title category-line-card__title--sport">Орехи: польза, вред, как выбрать и как употреблять</h3>
+                  <ul class="reactions">
+                    <li class="reaction-item">
+                      <svg class="reaction-icon" width="14" height="14" aria-hidden="true">
+                        <use xlink:href="#icon-like"></use>
+                      </svg>
+                      <span class="reaction-cntr" aria-label="Лайков">23</span>
+                    </li>
+                    <li class="reaction-item">
+                      <svg class="reaction-icon" width="14" height="14" aria-hidden="true">
+                        <use xlink:href="#icon-eye"></use>
+                      </svg>
+                      <span class="reaction-cntr" aria-label="Просмотров">643</span>
+                    </li>
+                  </ul>
+                </div>
+                <div class="category-line-card__img-wrapper--sport">
+                  <img class="category-line-card__img category-line-card__img--sport" src="/app/img/woman-sport-joga.png" alt="">
+                </div>
+              </a>
+            </article>
+          </li>
+          <li>
+            <article>
+              <a class="category-line-card category-line-card--sport" href="#">
+                <div class="category-line-card__details category-line-card__details--sport">
+                  <h3 class="category-line-card__title category-line-card__title--sport">Орехи: польза, вред, как выбрать и как употреблять</h3> 
+                  <ul class="reactions">
+                    <li class="reaction-item">
+                      <svg class="reaction-icon" width="14" height="14" aria-hidden="true">
+                        <use xlink:href="#icon-like"></use>
+                      </svg>
+                      <span class="reaction-cntr" aria-label="Лайков">23</span>
+                    </li>
+                    <li class="reaction-item">
+                      <svg class="reaction-icon" width="14" height="14" aria-hidden="true">
+                        <use xlink:href="#icon-eye"></use>
+                      </svg>
+                      <span class="reaction-cntr" aria-label="Просмотров">643</span>
+                    </li>
+                  </ul>
+                </div>
+                <div class="category-line-card__img-wrapper--sport">
+                  <img class="category-line-card__img category-line-card__img--sport" src="/app/img/woman-sport-joga.png" alt="">
+                </div>
+              </a>
+            </article>
+          </li>
+          <li>
+            <article>
+              <a class="category-line-card category-line-card--sport" href="#">
+                <div class="category-line-card__details category-line-card__details--sport">
+                  <h3 class="category-line-card__title category-line-card__title--sport">Орехи: польза, вред, как выбрать и как употреблять</h3>  
+                  <ul class="reactions">
+                    <li class="reaction-item">
+                      <svg class="reaction-icon" width="14" height="14" aria-hidden="true">
+                        <use xlink:href="#icon-like"></use>
+                      </svg>
+                      <span class="reaction-cntr" aria-label="Лайков">23</span>
+                    </li>
+                    <li class="reaction-item">
+                      <svg class="reaction-icon" width="14" height="14" aria-hidden="true">
+                        <use xlink:href="#icon-eye"></use>
+                      </svg>
+                      <span class="reaction-cntr" aria-label="Просмотров">643</span>
+                    </li>
+                  </ul>
+                </div>
+                <div class="category-line-card__img-wrapper--sport">
+                  <img class="category-line-card__img category-line-card__img--sport" src="/app/img/woman-sport-joga.png" alt="">
+                </div>
+              </a>
+            </article>
+          </li>
+          <li>
+            <article>
+              <a class="category-line-card category-line-card--sport" href="#">
+                <div class="category-line-card__details category-line-card__details--sport">
+                  <h3 class="category-line-card__title category-line-card__title--sport">Орехи: польза, вред, как выбрать и как употреблять</h3> 
+                  <ul class="reactions">
+                    <li class="reaction-item">
+                      <svg class="reaction-icon" width="14" height="14" aria-hidden="true">
+                        <use xlink:href="#icon-like"></use>
+                      </svg>
+                      <span class="reaction-cntr" aria-label="Лайков">23</span>
+                    </li>
+                    <li class="reaction-item">
+                      <svg class="reaction-icon" width="14" height="14" aria-hidden="true">
+                        <use xlink:href="#icon-eye"></use>
+                      </svg>
+                      <span class="reaction-cntr" aria-label="Просмотров">643</span>
+                    </li>
+                  </ul>
+                </div>
+                <div class="category-line-card__img-wrapper--sport">
+                  <img class="category-line-card__img category-line-card__img--sport" src="/app/img/woman-sport-joga.png" alt="">
+                </div>
+              </a>
+            </article>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+
+    <section class="section">
+      <div class="container">
+        <div class="section__heading-line">
+          <h2 class="section__heading">Жизнь</h2>
+          <a class="section__view-all" href="#">смотреть все</a>
+        </div>
+
+        <ul class="category-grid category-grid--live">
+          <li class="category-main-card--live">
+            <article>
+              <a class="category-main-card" href="#"> 
+                <div class="category-main-card__details category-main-card__details--live">
+                  <h3 class="category-main-card__title category-main-card__title--live">Орехи: польза, вред, как выбрать и как употреблять</h3>
+    
+                  <ul class="reactions">
+                    <li class="reaction-item">
+                      <svg class="reaction-icon" width="14" height="14" aria-hidden="true">
+                        <use xlink:href="#icon-like"></use>
+                      </svg>
+                      <span class="reaction-cntr" aria-label="Лайков">23</span>
+                    </li>
+                    <li class="reaction-item">
+                      <svg class="reaction-icon" width="14" height="14" aria-hidden="true">
+                        <use xlink:href="#icon-eye"></use>
+                      </svg>
+                      <span class="reaction-cntr" aria-label="Просмотров">643</span>
+                    </li>
+                  </ul>
+    
+                </div>
+                <img class="category-main-card__img" src="/app/img/woman-sport-joga.png" alt="">
+              </a>
+            </article>
+          </li>
+          <li>
+            <article>
+              <a class="category-line-card" href="#">
+                <div class="category-line-card__details category-line-card__details--live">
+                  <h3 class="category-line-card__title category-line-card__title--live">Орехи: польза, вред, как выбрать и как употреблять</h3>
+                  <ul class="reactions">
+                    <li class="reaction-item">
+                      <svg class="reaction-icon" width="14" height="14" aria-hidden="true">
+                        <use xlink:href="#icon-like"></use>
+                      </svg>
+                      <span class="reaction-cntr" aria-label="Лайков">23</span>
+                    </li>
+                    <li class="reaction-item">
+                      <svg class="reaction-icon" width="14" height="14" aria-hidden="true">
+                        <use xlink:href="#icon-eye"></use>
+                      </svg>
+                      <span class="reaction-cntr" aria-label="Просмотров">643</span>
+                    </li>
+                  </ul>
+                </div>
+                <div class="category-line-card__img-wrapper--live">
+                  <img class="category-line-card__img category-line-card__img--live" src="/app/img/woman-sport-joga.png" alt="">
+                </div>
+              </a>
+            </article>
+          </li>
+          <li>
+            <article>
+              <a class="category-line-card" href="#">
+                <div class="category-line-card__details category-line-card__details--live">
+                  <h3 class="category-line-card__title category-line-card__title--live">Орехи: польза, вред, как выбрать и как употреблять</h3>
+                  <ul class="reactions">
+                    <li class="reaction-item">
+                      <svg class="reaction-icon" width="14" height="14" aria-hidden="true">
+                        <use xlink:href="#icon-like"></use>
+                      </svg>
+                      <span class="reaction-cntr" aria-label="Лайков">23</span>
+                    </li>
+                    <li class="reaction-item">
+                      <svg class="reaction-icon" width="14" height="14" aria-hidden="true">
+                        <use xlink:href="#icon-eye"></use>
+                      </svg>
+                      <span class="reaction-cntr" aria-label="Просмотров">643</span>
+                    </li>
+                  </ul>
+                </div>
+                <div class="category-line-card__img-wrapper--live">
+                  <img class="category-line-card__img category-line-card__img--live" src="/app/img/woman-sport-joga.png" alt="">
+                </div>
+              </a>
+            </article>
+          </li>
+          <li>
+            <article>
+              <a class="category-line-card" href="#">
+                <div class="category-line-card__details category-line-card__details--live">
+                  <h3 class="category-line-card__title category-line-card__title--live">Орехи: польза, вред, как выбрать и как употреблять</h3>
+                  <ul class="reactions">
+                    <li class="reaction-item">
+                      <svg class="reaction-icon" width="14" height="14" aria-hidden="true">
+                        <use xlink:href="#icon-like"></use>
+                      </svg>
+                      <span class="reaction-cntr" aria-label="Лайков">23</span>
+                    </li>
+                    <li class="reaction-item">
+                      <svg class="reaction-icon" width="14" height="14" aria-hidden="true">
+                        <use xlink:href="#icon-eye"></use>
+                      </svg>
+                      <span class="reaction-cntr" aria-label="Просмотров">643</span>
+                    </li>
+                  </ul>
+                </div>
+                <div class="category-line-card__img-wrapper--live">
+                  <img class="category-line-card__img category-line-card__img--live" src="/app/img/woman-sport-joga.png" alt="">
+                </div>
+              </a>
+            </article>
+          </li>
+          <li>
+            <article>
+              <a class="category-line-card" href="#">
+                <div class="category-line-card__details category-line-card__details--live">
+                  <h3 class="category-line-card__title category-line-card__title--live">Орехи: польза, вред, как выбрать и как употреблять</h3>
+                  <ul class="reactions">
+                    <li class="reaction-item">
+                      <svg class="reaction-icon" width="14" height="14" aria-hidden="true">
+                        <use xlink:href="#icon-like"></use>
+                      </svg>
+                      <span class="reaction-cntr" aria-label="Лайков">23</span>
+                    </li>
+                    <li class="reaction-item">
+                      <svg class="reaction-icon" width="14" height="14" aria-hidden="true">
+                        <use xlink:href="#icon-eye"></use>
+                      </svg>
+                      <span class="reaction-cntr" aria-label="Просмотров">643</span>
+                    </li>
+                  </ul>
+                </div>
+                <div class="category-line-card__img-wrapper--live">
+                  <img class="category-line-card__img category-line-card__img--live" src="/app/img/woman-sport-joga.png" alt="">
+                </div>
+              </a>
+            </article>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="last-posts section">
+      <div class="container">
+        <div class="section__heading-line">
+          <h2 class="section__heading">Последние статьи</h2>
+          <ul class="last-posts__buttons">
+            <li class="last-posts__button-wrapper">
+              <button class="last-posts__button last-posts__button--left" type="button" aria-label="Предыдущий слайд">
+                <svg width="12" height="12" aria-hidden="true">
+                  <use xlink:href="#icon-arrow-left"></use>
+                </svg>
+              </button>
+            </li>
+            <li class="last-posts__button-wrapper">
+              <button class="last-posts__button last-posts__button--right" type="button" aria-label="Следующий слайд">
+                <svg width="12" height="12" aria-hidden="true">
+                  <use xlink:href="#icon-arrow-right"></use>
+                </svg>
+              </button>
+            </li>
+          </ul>
+        </div>
+        <ul class="last-posts__list">
+          <li class="last-posts__item">
+            <a class="last-posts__link" href="#">
+              <article class="last-posts__wrapper">
+                <figure class="last-posts__img-wrapper">
+                  <img class="last-posts__img" src="/app/img/food-3.png" alt="">
+                </figure>
+                <div class="last-posts__details">
+                  <h3 class="last-posts__title">Какие тренировки позволяют скинуть вес быстрее?</h3>
+                  <div class="last-posts__description">Какое-нибудь описание про эту статью и бла бла пару слов еще несколько. Какие тренировки позволяют скинуть вес быстрее?</div>
+                  <ul class="reactions">
+                    <li class="reaction-item">
+                      <svg class="reaction-icon" width="14" height="14" aria-hidden="true">
+                        <use xlink:href="#icon-like"></use>
+                      </svg>
+                      <span class="reaction-cntr" aria-label="Лайков">23</span>
+                    </li>
+                    <li class="reaction-item">
+                      <svg class="reaction-icon" width="14" height="14" aria-hidden="true">
+                        <use xlink:href="#icon-eye"></use>
+                      </svg>
+                      <span class="reaction-cntr" aria-label="Просмотров">643</span>
+                    </li>
+                  </ul>
+                </div>
+              </article>
+            </a>
+          </li>
+          <li class="last-posts__item">
+            <a class="last-posts__link" href="#">
+              <article class="last-posts__wrapper">
+                <figure class="last-posts__img-wrapper">
+                  <img class="last-posts__img" src="/app/img/food-3.png" alt="">
+                </figure>
+                <div class="last-posts__details">
+                  <h3 class="last-posts__title">Какие тренировки позволяют скинуть вес быстрее?</h3>
+                  <div class="last-posts__description">Какое-нибудь описание про эту статью и бла бла пару слов еще несколько. Какие тренировки позволяют скинуть вес быстрее?</div>
+                  <ul class="reactions">
+                    <li class="reaction-item">
+                      <svg class="reaction-icon" width="14" height="14" aria-hidden="true">
+                        <use xlink:href="#icon-like"></use>
+                      </svg>
+                      <span class="reaction-cntr" aria-label="Лайков">23</span>
+                    </li>
+                    <li class="reaction-item">
+                      <svg class="reaction-icon" width="14" height="14" aria-hidden="true">
+                        <use xlink:href="#icon-eye"></use>
+                      </svg>
+                      <span class="reaction-cntr" aria-label="Просмотров">643</span>
+                    </li>
+                  </ul>
+                </div>
+              </article>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <button class="up-button visually-hidden" type="button">
+      <svg width="20" height="20">
+        <use xlink:href="#icon-arrow-up"></use>
+      </svg>
+    </button>
+
+    <!-- <div class="policy-widget">
+      <div class="container policy-widget__container">
+        <p class="policy-widget__description">Просматривая этот сайт, вы соглашаетесь с нашей <a href="#">политикой конфиденциальности</a></p>
+        <button class="policy-widget__button" type="button">ОК</button>
+      </div>
+    </div> -->
+
+  </main>
+  <footer class="footer">
+    
+  </footer>
+  <script src="/app/js/main.js"></script>
+</body>
+</html>

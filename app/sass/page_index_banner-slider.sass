@@ -1,0 +1,160 @@
+.banner-slider__container
+  position: relative
+
+.banner-slider__wrapper
+  position: relative
+  display: flex
+  flex-direction: column
+  align-items: center
+
+.banner-slider__img-wrapper
+  border-radius: 20px
+  max-width: 380px
+
+.banner-slider__img
+  display: block
+  width: 100%
+  transition-duration: .3s
+
+.banner-slider__details
+  position: relative
+  z-index: 1
+  max-width: 330px
+  margin-left: 10px
+  margin-right: 10px
+  padding: 16px
+  border-radius: 20px
+  box-shadow: 0px 4px 20px -8px rgba(0, 0, 0, 25%)
+  backdrop-filter: blur(4px)  
+  top: -40px 
+
+.bg-blur
+  position: absolute
+  top: 0
+  left: 0
+  z-index: -1
+  width: 100%
+  height: 100%
+  border-radius: 20px
+  background-color: #ffffff
+  opacity: 70%
+
+.banner-slider__details-category
+  display: flex
+  padding: 3px 6px 2px 6px
+  width: max-content
+  background-color: #FFEFF6
+  border-radius: 20px
+  color: #992F2F
+  font-size: 8px
+
+.banner-slider__details-title
+  display: block
+  margin: 13px 0px
+  font-weight: normal
+  font-size: 16px
+
+
+.banner-slider-controls
+  position: relative
+  display: flex
+  align-self: start
+  gap: 10px
+  left: 10vw
+  top: -20px
+
+.banner-slider__control
+  display: flex
+  align-items: center
+  justify-content: center
+  width: 44px
+  height: 44px
+  border: 1px solid #D4D4D4
+  border-radius: 100px
+  cursor: pointer
+  
+
+.banner-slider__control-left
+  padding-right: 3px
+
+.banner-slider__control-right
+  padding-left: 3px
+
+
+@media ( min-width: 460px )
+  .banner-slider__wrapper
+    align-items: end
+
+  .banner-slider__img-wrapper
+    max-width: 300px
+
+  .banner-slider__details
+    position: absolute
+    top: 5%
+    left: 0
+    margin: 0
+    max-width: 280px
+  
+  .banner-slider-controls
+    position: absolute
+    top: 80%
+    left: 5%
+
+  
+@media ( min-width: 620px )
+  .banner-slider__img-wrapper
+    max-width: 420px
+  
+  .banner-slider__details
+    max-width: 330px
+    top: 10%
+
+  .banner-slider__details-title
+    margin-top: 25px
+    margin-bottom: 30px
+
+  .banner-slider-controls
+    top: 70%
+
+
+@media ( min-width: 768px )
+  .banner-slider__img-wrapper
+    max-width: 450px
+
+  .banner-slider__details
+    max-width: 380px
+    font-size: 20px
+
+ 
+  .banner-slider__details-category
+    padding: 8px 10px 5px 10px
+    font-size: 10px
+
+
+@media ( min-width: 830px )
+  .banner-slider__img-wrapper
+    max-width: 500px
+
+  .banner-slider__details
+    max-width: 420px
+
+  .banner-slider__details-title
+    margin-top: 30px
+    margin-bottom: 40px
+    
+
+@media ( min-width: 930px )
+  .banner-slider__img-wrapper
+    max-width: 538px
+
+  .banner-slider__details
+    max-width: 576px
+    padding: 25px 20px 25px 20px
+
+  .banner-slider__details-title
+    margin-top: 45px
+    margin-bottom: 60px
+    font-size: 24px
+
+  .banner-slider-controls
+    top: 80%

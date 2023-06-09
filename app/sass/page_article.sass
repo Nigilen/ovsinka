@@ -1,0 +1,234 @@
+.article
+  color: #404040
+  font-size: 16px
+  line-height: 175%
+  
+.article__heading
+  font-weight: 600
+  color: #171717
+  line-height: 175%
+  
+.article__h1
+  font-size: 42px
+  line-height:130%
+
+.article__h2
+  font-size: 32px
+  line-height:140%
+
+.article__h3
+  font-size: 24px
+  line-height: 140%
+
+.article__h4
+  font-size: 20px
+
+.article__list
+  padding-left: 1.625em
+
+.article__list-item
+  padding-left: 0.375em
+
+.article__ul
+  list-style: disc
+
+.article__ol
+  list-style: auto
+
+.article__ul-li::marker
+  font-size: 25px
+  color: #d4d4d4
+
+.article__ol-li::marker
+  color: #737373
+
+.article__list-item:not(:last-child)
+  margin-bottom: 10px
+
+.article__a
+  text-decoration: underline
+  text-underline-offset: 2px
+  color: blue
+
+
+.article__main-img
+  width: 100%
+  border-radius: 20px
+  margin-bottom: 40px
+
+.announcement
+  margin-bottom: 60px
+
+.article-nav
+  margin-bottom: 60px
+
+.article-nav__wrapper
+  margin: 0
+  display: flex
+  flex-direction: column-reverse
+  background-color: #f9f9f9
+  padding: 26px
+  border-radius: 20px
+
+.article-nav__list
+  margin: 0
+  padding: 0 18px
+  display: flex
+  flex-direction: column
+  gap: 10px
+  list-style: auto
+
+.article-nav__item
+  color: #666666
+  font-size: 14px
+
+.article-nav__link
+  color: #666666
+  text-underline-offset: 4px
+  text-decoration: underline
+  
+.article-nav__caption
+  font-size: 20px
+  margin-bottom: 20px
+  color: #171717
+
+
+
+
+.article__section
+  margin-bottom: 60px
+
+.article__figure
+  margin: 30px 0
+  text-align: center
+  
+.article__img
+  width: 100%
+  display: block
+  border-radius: 5px
+  
+.article-blockquote
+  margin: 30px auto
+  border-left: 3px solid #e5e5e5
+  padding-left: 1em
+  padding-top: 5px
+  padding-bottom: 5px
+  max-width: 400px
+  font-style: italic
+  
+.article-blockquote__body::before
+  content: open-quote
+
+.article-blockquote__body::after
+  content: close-quote
+
+.article-blockquote__cite
+  display: block
+  text-align: right
+  font-style: normal
+
+
+
+.article-table
+  color: #171717
+  width: 100%
+  font-size: 16px
+  margin: 3em 0
+
+.article-table__th, .article-table__td
+  padding: 8px 
+  border: 1px solid #d4d4d4
+  
+.article__caption
+  caption-side: bottom
+  margin-top: 10px
+  font-size: 13px
+  color: #999999
+
+.article-table
+  border-collapse: collapse
+  text-align: left
+
+.article-table__thead
+  border-bottom: 3px solid #404040
+  background-color: #F3F4F6
+
+  
+.aricle-footer__details
+  display: flex
+  padding: 14px
+  justify-content: space-between
+  align-items: center
+  background-color: #fafafa
+  border-radius: 20px
+  margin-bottom: 60px
+
+.article-footer__autor
+  display: grid
+  grid-template-columns: auto auto
+  grid-template-rows: 1fr 1fr
+  align-items: end
+  column-gap: 7px
+  font-size: 14px
+  line-height: normal
+  color: #404040
+
+
+.article-footer__autor-img-wrapper
+  grid-row-start: 1
+  grid-row-end: -1
+  width: 40px
+  height: 40px
+
+.article-footer__autor-img
+  display: block
+  width: 100%
+  height: 100%
+  border-radius: 20px
+  object-fit: cover
+
+.article-footer__autor-name
+  margin: 0
+  
+.article-footer__date
+  font-size: 12px  
+
+  
+
+@media ( min-width: 1024px ) 
+
+  .article
+    font-size: 18px
+
+  .article__h1
+    font-size: 60px
+    margin-bottom: 40px
+
+  .article__h2
+    font-size: 40px
+
+  .article__h3
+    font-size: 27px
+
+  .article__h4
+    font-size: 23px
+  
+  .article__list-item:not(:last-child)
+    margin-bottom: 15px
+
+  .article-nav__wrapper
+    padding: 30px 90px 30px 90px
+
+  .article-nav__caption
+    font-size: 22px
+
+  .article-nav__item
+    font-size: 18px
+
+
+  .aricle-footer__details
+    padding: 30px
+  
+  .article-footer__autor-img-wrapper
+    width: 44px
+    height: 44px
