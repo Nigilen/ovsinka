@@ -6,16 +6,12 @@
   transition-duration: .3s
   border-bottom: thin solid #F5F5F5
 
-.header--hidden
-  transform: translateY(-100%)
-  transition-duration: .3s
-
   
 .header__nav
   padding: 16px 0px
   display: flex
   align-items: center
-  gap: 36px
+  gap: 60px
 
 .site-nav
   padding: 30px 16px 30px 16px
@@ -63,6 +59,7 @@
   width: 18px
   height: 18px
 
+  
 .burger
   display: flex
   cursor: pointer
@@ -85,10 +82,17 @@
 .burger--active .burger-icon--close
   display: flex
 
+.logo
+  width: 80px
 
+.logo__img
+  width: 100%
 
 
 @media ( min-width: 1000px )
+  .logo
+    width: 100px
+  
   .burger 
     display: none
 
@@ -104,5 +108,5 @@
     padding: 0px
     width: auto
     height: auto
-    gap: 6px
+    gap:30px
     transform: translateX(0%)

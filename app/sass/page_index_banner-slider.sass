@@ -1,6 +1,33 @@
 .banner-slider__container
   position: relative
 
+
+
+
+.banner-slider__list
+  position: relative
+
+.banner-slider__item
+  position: absolute
+  width: 100%
+  top: 0
+  left: 0
+  opacity: 0%
+  visibility: hidden
+
+.screen-active
+  position: relative
+  opacity: 100%
+  visibility: visible
+  transition: 1.5s
+
+.screen-active .banner-slider__details
+  transform: translateY(0%) 
+
+.screen-active .banner-slider__img-wrapper
+  transform: scale(1)
+
+
 .banner-slider__wrapper
   position: relative
   display: flex
@@ -9,12 +36,15 @@
 
 .banner-slider__img-wrapper
   border-radius: 20px
-  max-width: 380px
+  overflow: hidden
+  transform: scale(1.1)
+  transition: 1s
 
 .banner-slider__img
   display: block
-  width: 100%
-  transition-duration: .3s
+  width: 328px
+  height: 254px
+  object-fit: cover
 
 .banner-slider__details
   position: relative
@@ -27,6 +57,8 @@
   box-shadow: 0px 4px 20px -8px rgba(0, 0, 0, 25%)
   backdrop-filter: blur(4px)  
   top: -40px 
+  transform: translateY(10%) 
+  transition: 1s
 
 .bg-blur
   position: absolute
@@ -49,7 +81,9 @@
   font-size: 8px
 
 .banner-slider__details-title
-  display: block
+  display: flex
+  align-items: center
+  min-height: 60px
   margin: 13px 0px
   font-weight: normal
   font-size: 16px
@@ -80,14 +114,20 @@
 .banner-slider__control-right
   padding-left: 3px
 
+@media ( min-width: 380px )
+  .banner-slider__img
+    width: 370px
+    height: 286px
 
-@media ( min-width: 460px )
+
+@media ( min-width: 490px )
   .banner-slider__wrapper
     align-items: end
 
-  .banner-slider__img-wrapper
-    max-width: 300px
-
+  .banner-slider__img
+    width: 328px
+    height: 254px
+  
   .banner-slider__details
     position: absolute
     top: 5%
@@ -100,10 +140,14 @@
     top: 80%
     left: 5%
 
+  .banner-slider__details-title
+    min-height: auto
+
   
 @media ( min-width: 620px )
-  .banner-slider__img-wrapper
-    max-width: 420px
+  .banner-slider__img
+    width: 420px
+    height: 325px
   
   .banner-slider__details
     max-width: 330px
@@ -118,8 +162,9 @@
 
 
 @media ( min-width: 768px )
-  .banner-slider__img-wrapper
-    max-width: 450px
+  .banner-slider__img
+    width: 480px
+    height: 371px
 
   .banner-slider__details
     max-width: 380px
@@ -132,8 +177,9 @@
 
 
 @media ( min-width: 830px )
-  .banner-slider__img-wrapper
-    max-width: 500px
+  .banner-slider__img
+    width: 538px
+    height: 383px
 
   .banner-slider__details
     max-width: 420px
@@ -144,9 +190,7 @@
     
 
 @media ( min-width: 930px )
-  .banner-slider__img-wrapper
-    max-width: 538px
-
+  
   .banner-slider__details
     max-width: 576px
     padding: 25px 20px 25px 20px
@@ -157,4 +201,4 @@
     font-size: 24px
 
   .banner-slider-controls
-    top: 80%
+    top: 85%

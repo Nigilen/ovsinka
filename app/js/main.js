@@ -35,24 +35,19 @@ function throttle(callee, timeout) {
 
 // HEADER-STICKY 
 
+
+let lastScrollTop = 0;
 let header = document.querySelector(".header");
-let oldScroll = window.scrollY;
-let newScroll;
-
-let scrolling = function() {
-  newScroll = window.scrollY;
-  const headerHidden = header.classList.contains('header_hidden');
-
-  if (newScroll > oldScroll && !headerHidden) {
-    header.classList.add("header--hidden");
+let showHideHeader = function() {
+  let scrollTop = window.scrollY;
+  if (scrollTop > lastScrollTop) {
+    header.style.top = "-80px";
   } else {
-    header.classList.remove("header--hidden");
-  } 
-
-  oldScroll = newScroll;
+    header.style.top = "0";
+  }
+  lastScrollTop = scrollTop;
 };
-
-window.addEventListener("scroll", throttle(scrolling, 300));
+window.addEventListener("scroll", throttle(showHideHeader, 300));
 
 
 // UP-BUTTON
@@ -70,3 +65,54 @@ window.addEventListener("scroll", function() {
     upButton.classList.add("visually-hidden")
   }
 })
+
+
+
+// BANNER-SLIDER
+
+
+let banSlControlRight = document.querySelector(".banner-slider__control-right");
+let banSlControlLeft = document.querySelector(".banner-slider__control-left");
+let bannerSlides = document.querySelectorAll(".banner-slider__item");
+let currentSlide = 0;
+
+// let interval = setInterval(function() {
+//   bannerSlides[currentSlide].classList.remove("screen-active");
+//   currentSlide = (currentSlide+1)%bannerSlides.length;
+//   bannerSlides[currentSlide].classList.add("screen-active");
+// }, 5000)
+
+banSlControlRight.addEventListener("click", function() {
+  bannerSlides[currentSlide].classList.remove("screen-active");
+  currentSlide = (currentSlide+1)%bannerSlides.length;
+  bannerSlides[currentSlide].classList.add("screen-active");
+});
+
+banSlControlLeft.addEventListener("click", function() {
+  bannerSlides[currentSlide].classList.remove("screen-active");
+  if (currentSlide != 0) {
+    currentSlide = (currentSlide-1)%bannerSlides.length;
+  } else {
+    currentSlide = bannerSlides.length - 1;
+  }
+  bannerSlides[currentSlide].classList.add("screen-active");
+});
+
+
+// SLIDER LAST POSTS
+
+let postsList = document.querySelector(".last-posts__list");
+let postItems = document.querySelectorAll(".last-posts__item");
+let postsButtonRight = document.querySelector(".last-posts__button--right");
+let postsButtonLeft = document.querySelector(".last-posts__button--left");
+
+postsButtonRight.addEventListener("click", function() {
+  let scrollLeft = postItems[0].clientWidth
+  postsList.scrollLeft += scrollLeft
+})
+
+postsButtonLeft.addEventListener("click", function() {
+  let scrollLeft = postItems[0].clientWidth
+  postsList.scrollLeft -= scrollLeft
+});
+
