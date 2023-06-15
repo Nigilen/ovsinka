@@ -76,11 +76,6 @@ let banSlControlLeft = document.querySelector(".banner-slider__control-left");
 let bannerSlides = document.querySelectorAll(".banner-slider__item");
 let currentSlide = 0;
 
-// let interval = setInterval(function() {
-//   bannerSlides[currentSlide].classList.remove("screen-active");
-//   currentSlide = (currentSlide+1)%bannerSlides.length;
-//   bannerSlides[currentSlide].classList.add("screen-active");
-// }, 5000)
 
 banSlControlRight.addEventListener("click", function() {
   bannerSlides[currentSlide].classList.remove("screen-active");

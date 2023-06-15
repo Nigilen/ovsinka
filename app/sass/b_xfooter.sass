@@ -1,0 +1,99 @@
+.footer
+  position: relative
+  background-color: #3D3D49
+  padding-top: 33px
+  padding-bottom: 25px
+
+.footer__wrapper
+  display: grid
+  gap: 65px
+
+.logo--footer
+  width: 100px
+
+.footer__top
+  display: grid
+  justify-items: center
+  gap: 45px
+  align-items: center
+
+.footer__nav-list
+  display: flex
+  flex-direction: column
+  align-items: center
+  gap: 25px
+
+.footer__nav-link
+  display: block
+  color: #D6D7D6
+  text-transform: uppercase
+  font-size: 14px
+  padding: 6px
+  padding-top: 10px
+
+.diviline
+  position: absolute
+  top: 80%
+  left: 0
+  border-color: transparent
+  border-bottom-color: #565661
+  margin: 0
+  width: 100%
+
+.footer__social-list
+  display: flex
+  width: 100%
+  justify-content: center
+  gap: 8px
+
+.footer__social-link-icon 
+  width: 30px
+  height: 30px
+
+.footer__bottom
+  display: flex
+  flex-direction: column
+  align-items: center
+  gap: 15px
+
+.footer__policy-link
+  font-size: 10px
+  color: #A2A3A7
+
+.copyright
+  font-size: 10px
+  color: #A2A3A7
+  margin: 0
+
+
+
+@media (min-width: 1024px)
+
+  .footer
+    padding-top: 25px
+    padding-bottom: 30px
+
+  .footer__wrapper
+    gap: 55px
+
+  .footer__top
+    grid-template-columns: auto auto auto
+    justify-content: space-between
+    width: 100%
+
+  .footer__nav-list
+    flex-direction: row
+  
+  .footer__bottom
+    flex-direction: row
+    justify-content: space-between
+
+  .diviline
+    position: absolute
+    top: 80px
+  
+  .footer__policy-link
+    font-size: 14px
+
+  .copyright
+    font-size: 14px

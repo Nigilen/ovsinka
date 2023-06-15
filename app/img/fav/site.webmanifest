@@ -1,6 +1,6 @@
 {
-    "name": "Dushnilov blog",
-    "short_name": "Dushnilov",
+    "name": "MonoBlog",
+    "short_name": "MonoBlog",
     "icons": [
         {
             "src": "/app/img/fav/favicon.svg",
