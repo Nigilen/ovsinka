@@ -1,0 +1,47 @@
+<?php
+        
+            // проверяем есть ли посты в глобальном запросе - переменная $wp_query
+            if( have_posts() ){
+            	// перебираем все имеющиеся посты и выводим их
+            	while( have_posts() ){
+            		the_post();
+            		?>
+            
+            		<li class="category-grid--food-item-wrapper">
+                        <article class="category-grid--food-item">
+                        
+                          <a class="category-main-card" href="<?php the_permalink()?>"> 
+                            <div class="category-main-card__details category-main-card__details--food">
+                              <h3 class="category-main-card__title category-main-card__title--food"><?php the_title()?></h3>
+                              <ul class="reactions">
+                                <li class="reaction-item">
+                                  <svg class="reaction-icon" width="14" height="14" aria-hidden="true">
+                                    <use xlink:href="#icon-like"></use>
+                                  </svg>
+                                  <span class="reaction-cntr">23</span>
+                                </li>
+                                <li class="reaction-item">
+                                  <svg class="reaction-icon" width="14" height="14" aria-hidden="true">
+                                    <use xlink:href="#icon-eye"></use>
+                                  </svg>
+                                  <span class="reaction-cntr">643</span>
+                                </li>
+                              </ul>
+                            </div>
+                            <span>
+                                <?php echo $category[0]->cat_name;?>
+                            </span>
+                            <img class="category-main-card__img" src="<?php echo get_the_post_thumbnail_url();?>" alt="">
+                          </a>
+                        </article>
+                      </li>
+            
+            		<?php
+            	}
+            	
+            }
+            // постов нет
+            else {
+            	echo "<h2>Записей нет.</h2>";
+            }
+        ?>

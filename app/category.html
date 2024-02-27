@@ -82,7 +82,7 @@
   <header class="header">
     <nav class="header__nav container">
       <a class="logo" href="#">
-        <img class="logo__img" src="/app/img/Dushnilov.svg" alt="Логотип Dushnilov">
+        <img class="logo__img" src="/app/img/logo.svg" alt="Логотип Dushnilov">
       </a>
       <ul class="site-nav nonart-list">
         <li class="site-nav__item site-nav__link--active">
@@ -139,22 +139,22 @@
       <h2 class="visually-hidden">Подразделы</h2>
         <ul class="subcategory__list">
           <li class="subcategory__item">
-            <button class="subcategory__tab" type="button">
+            <button class="subcategory__tab" type="button" data-tab="all">
               Все
             </button>
           </li>
           <li class="subcategory__item">
-            <button class="subcategory__tab subcategory__tab--first" type="button">
+            <button class="subcategory__tab subcategory__tab--first" type="button" data-tab="dieti">
               Диеты
             </button>
           </li>
           <li class="subcategory__item">
-            <button class="subcategory__tab subcategory__tab--second" type="button">
+            <button class="subcategory__tab subcategory__tab--second" type="button" data-tab="recepti">
               Рецепты
             </button>
           </li>
           <li class="subcategory__item">
-            <button class="subcategory__tab subcategory__tab--third" type="button">
+            <button class="subcategory__tab subcategory__tab--third" type="button" data-tab="producti">
               Продукты
             </button>
           </li>
@@ -166,7 +166,7 @@
       <div class="container">
         <h2 class="visually-hidden">Последние статьи раздела</h2>
         <ul class="category-posts__list">
-          <li class="category-posts__item">
+          <li class="category-posts__item" data-tab="producti" data-tab="dieti">
             <a class="category-posts__link" href="#">
               <article class="category-posts__wrapper">
                 <div class="category-posts__details">
@@ -192,7 +192,7 @@
               </article>
             </a>
           </li>
-          <li class="category-posts__item">
+          <li class="category-posts__item" data-tab="dieti">
             <a class="category-posts__link" href="#">
               <article class="category-posts__wrapper">
                 <div class="category-posts__details">
@@ -218,7 +218,7 @@
               </article>
             </a>
           </li>
-          <li class="category-posts__item">
+          <li class="category-posts__item" data-tab="recepti">
             <a class="category-posts__link" href="#">
               <article class="category-posts__wrapper">
                 <div class="category-posts__details">
@@ -244,7 +244,7 @@
               </article>
             </a>
           </li>
-          <li class="category-posts__item">
+          <li class="category-posts__item" data-tab="dieti">
             <a class="category-posts__link" href="#">
               <article class="category-posts__wrapper">
                 <div class="category-posts__details">
@@ -270,7 +270,7 @@
               </article>
             </a>
           </li>
-          <li class="category-posts__item">
+          <li class="category-posts__item" data-tab="producti">
             <a class="category-posts__link" href="#">
               <article class="category-posts__wrapper">
                 <div class="category-posts__details">
@@ -296,7 +296,7 @@
               </article>
             </a>
           </li>
-          <li class="category-posts__item">
+          <li class="category-posts__item" data-tab="dieti">
             <a class="category-posts__link" href="#">
               <article class="category-posts__wrapper">
                 <div class="category-posts__details">
@@ -322,7 +322,7 @@
               </article>
             </a>
           </li>
-          <li class="category-posts__item">
+          <li class="category-posts__item" data-tab="producti">
             <a class="category-posts__link" href="#">
               <article class="category-posts__wrapper">
                 <div class="category-posts__details">
@@ -348,7 +348,7 @@
               </article>
             </a>
           </li>
-          <li class="category-posts__item">
+          <li class="category-posts__item" data-tab="dieti">
             <a class="category-posts__link" href="#">
               <article class="category-posts__wrapper">
                 <div class="category-posts__details">
@@ -378,14 +378,18 @@
         <button type="button" class="category-posts__view-all">смотреть еще</button>
       </div>
     </section>
-    
+    <button class="up-button visually-hidden" type="button">
+      <svg width="20" height="20">
+        <use xlink:href="#icon-arrow-up"></use>
+      </svg>
+    </button>
   </main>
   <footer class="footer">
     <div class="container">
       <div class="footer__wrapper">
         <div class="footer__top">
           <a class="logo logo--footer" href="#">
-            <img class="logo__img footer__logo-img" src="/app/img/logo-wite.svg" alt="Логотип Dushnilov">
+            <img class="logo__img footer__logo-img" src="/app/img/logo.svg" alt="Логотип Dushnilov">
           </a>
           <ul class="footer__nav-list">
             <li class="footer__nav-item">

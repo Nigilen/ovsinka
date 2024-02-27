@@ -3,56 +3,120 @@
   font-size: 16px
   line-height: 175%
   
-.article__heading
+  
+.article-body h1,
+.article-body h2,
+.article-body h3,
+.article-body h4
   font-weight: 600
   color: #171717
   line-height: 175%
-  
+
+
 .article__h1
   font-size: 36px
-  line-height:130%
+  line-height: 130%
+  margin-top: 0px
 
-.article__h2
+.article-body h2
   font-size: 28px
   line-height:140%
 
-.article__h3
+.article-body h3
   font-size: 24px
   line-height: 140%
 
-.article__h4
+.article-body h4
   font-size: 20px
 
-.article__list
+
+.article-body table
+  color: #171717
+  width: 100%
+  font-size: 16px
+  margin: 3em 0
+  border-collapse: collapse
+  text-align: left
+
+.article-body table th, .article-body table td
+  padding: 8px 
+  border: 1px solid #d4d4d4
+  
+.article-body table caption
+  caption-side: bottom
+  margin-top: 10px
+  font-size: 13px
+  color: #999999
+
+
+.article-body table thead
+  border-bottom: 3px solid #404040
+  background-color: #F3F4F6
+
+
+.article-body ul
+  list-style: disc
   padding-left: 1.625em
 
-.article__list-item
-  padding-left: 0.375em
-
-.article__ul
-  list-style: disc
-
-.article__ol
+.article-body ol
+  padding-left: 1.625em
   list-style: decimal
 
-.article__ul-li::marker
+.article-body ul li::marker
   font-size: 25px
   color: #d4d4d4
 
-.article__ol-li::marker
+.article-body ol li::marker
   color: #737373
 
-.article__list-item:not(:last-child)
+.article-body li
+  padding-left: 0.375em
+
+.article-body li:not(:last-child)
   margin-bottom: 10px
 
-.article__a
+.article-body a
   text-decoration: underline
   text-underline-offset: 2px
   color: blue
 
 
+.article-body blockquote
+  margin: 30px auto
+  border-left: 3px solid #e5e5e5
+  padding-left: 1em
+  padding-top: 5px
+  padding-bottom: 5px
+  width: 100%
+  box-sizing: border-box
+  font-style: italic
+  
+.article-body blockquote p::before
+  content: open-quote
+
+.article-body blockquote p::after
+  content: close-quote
+
+.article-body blockquote cite
+  display: block
+  text-align: right
+  font-style: normal
+
+
+.article-body figure
+  margin: 30px 0
+  text-align: center
+  
+.article-body figure img
+  width: 100%
+  display: block
+  border-radius: 5px
+  
+
+
 .article__main-img
   width: 100%
+  height: auto
   border-radius: 20px
   margin-bottom: 40px
 
@@ -92,67 +156,6 @@
   margin-bottom: 20px
   color: #171717
 
-
-
-
-.article__section
-  margin-bottom: 60px
-
-.article__figure
-  margin: 30px 0
-  text-align: center
-  
-.article__img
-  width: 100%
-  display: block
-  border-radius: 5px
-  
-.article-blockquote
-  margin: 30px auto
-  border-left: 3px solid #e5e5e5
-  padding-left: 1em
-  padding-top: 5px
-  padding-bottom: 5px
-  width: 100%
-  box-sizing: border-box
-  font-style: italic
-  
-.article-blockquote__body::before
-  content: open-quote
-
-.article-blockquote__body::after
-  content: close-quote
-
-.article-blockquote__cite
-  display: block
-  text-align: right
-  font-style: normal
-
-
-
-.article-table
-  color: #171717
-  width: 100%
-  font-size: 16px
-  margin: 3em 0
-
-.article-table__th, .article-table__td
-  padding: 8px 
-  border: 1px solid #d4d4d4
-  
-.article__caption
-  caption-side: bottom
-  margin-top: 10px
-  font-size: 13px
-  color: #999999
-
-.article-table
-  border-collapse: collapse
-  text-align: left
-
-.article-table__thead
-  border-bottom: 3px solid #404040
-  background-color: #F3F4F6
 
   
 .aricle-footer__details
@@ -205,16 +208,16 @@
     font-size: 60px
     margin-bottom: 40px
 
-  .article__h2
+  .article-body h2
     font-size: 40px
 
-  .article__h3
+  .article-body h3
     font-size: 27px
 
-  .article__h4
+  .article-body h4
     font-size: 23px
   
-  .article__list-item:not(:last-child)
+  .article-body li:not(:last-child)
     margin-bottom: 15px
 
   .article-nav__wrapper

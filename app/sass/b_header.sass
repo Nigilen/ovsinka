@@ -13,7 +13,10 @@
   align-items: center
   gap: 60px
 
-.site-nav
+
+// ДЛЯ WORDPRESS ///////////////
+
+.menu
   padding: 30px 16px 30px 16px
   position: absolute
   top: 50px
@@ -28,20 +31,20 @@
   background-color: #ffffff
   transform: translateX(-100%)
   transition-duration: .8s
-  
-.site-nav__wrapper--open
-  transform: translateX(0%)
-  transition-duration: .8s
 
-
-.site-nav__link
+.menu-item a
   display: block
   padding: 15px 12px 12px 12px
- 
 
-.site-nav__link--active
+.current-menu-item
   border-radius: 40px
   background-color: #f3f4f6
+
+.menu--open
+  transform: translateX(0%)
+  transition-duration: .8s
+ 
+
 
 .user-nav
   display: flex
@@ -100,7 +103,9 @@
   .user-nav
     gap: 0px
 
-  .site-nav
+
+
+  .menu
     display: flex
     flex-direction: row
     position: static
@@ -111,3 +116,4 @@
     height: auto
     gap:30px
     transform: translateX(0%)
+// ДЛЯ WORDPRESS ///////////////

@@ -102,11 +102,20 @@
       </ul>
       <ul class="user-nav nonart-list">
         <li class="user-nav__item">
-          <button class="header-search__button" type="button" aria-label="Открыть страницу поиска">
+          <!-- <button class="header-search__button" type="button" aria-label="Открыть страницу поиска">
             <svg class="search-icon" aria-hidden="true">
               <use xlink:href="#search-icon"></use>
             </svg>
-          </button>
+          </button> -->
+          <form class="search__form" action="https://dushnilov.ru" method="post">
+            <input id="search__bar" class="search__bar" type="text">
+            <label class="visually-hidden" for="search__bar">Введите запрос</label>
+            <button class="search__button" type="button">
+              <svg class="search-icon">
+                <use xlink:href="#search-icon"></use>
+              </svg>
+            </button>
+          </form>
         </li>
         <li class="user-nav__item">
           <button class="burger" type="button" aria-label="Открыть меню">

@@ -28,13 +28,17 @@
   box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.05), 0px 1px 1px 0px rgba(0, 0, 0, 0.02), 0px 1px 3px 0px rgba(0, 0, 0, 0.12)
   border-radius: 5px
   overflow: hidden
-
+  width: 100%
 
 
 .category-posts__item:hover
   box-shadow: 0px 2px 8px -1px rgba(0, 0, 0, 0.1), 0px 1px 8px 0px rgba(0, 0, 0, 0.04), 0px 1px 8px 0px rgba(0, 0, 0, 0.12)
   transform: translateY(-5px)
   transition: all 0.5s cubic-bezier(.25,.8,.25,1)
+
+
+.category-posts__item--hidden
+  display: none
 
 // END SHADOWS
 
@@ -49,9 +53,11 @@
   margin: 0
 
 .category-posts__wrapper
-  display: flex
+  display: grid
+  grid-template-columns: 2fr 1fr
   background-color: #F9F9F9
   max-width: 500px
+  justify-content: space-between
 
 .category-posts__details
   display: flex
@@ -61,6 +67,7 @@
 
 .category-posts__img-wrapper
   max-width: 104px
+  justify-self: end
 
 .category-posts__img
   width: 100%
@@ -93,7 +100,7 @@
     border-radius: 20px
 
   .category-posts__wrapper
-    flex-direction: column-reverse
+    grid-template-columns: none
     max-width: 244px
     border-radius: 20px
   

@@ -7,17 +7,29 @@
   padding: 0
   list-style: none
   display: flex
-  gap: 5px
+
 
 .breadcrumbs__link
   text-decoration: none
   display: flex
   color: #171717
   font-size: 12px
-  padding: 2px 13px 0px 13px
-  background-color: #FFEFF6
-  color: #992F2F
+  padding: 2px 5px
+  color: #999999
   border-radius: 20px
+
+.breadcrumbs__item
+  font-size: 12px
+  display: flex
+  align-items: center
+
+
+.breadcrumbs__item:not(:nth-last-child(-n+2))::after
+  content: ">"
+  display: block
+  margin: 0 3px
+  text-align: center
+  color: #aaaaaa
   
 .breadcrumbs__item:nth-last-child(1)
   display: none

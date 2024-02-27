@@ -1,11 +1,40 @@
+
+
+// TABS CATEGORIES
+
+let subcategoryTab = document.querySelectorAll('.subcategory__tab');
+let categoryPostsItem = document.querySelectorAll('.category-posts__item');
+
+
+for (let i = 0; i < subcategoryTab.length; i++) {
+  subcategoryTab[i].addEventListener("click", function() {
+    let id = this.getAttribute('data-tab');
+    for (let j = 0; j < categoryPostsItem.length; j++) {
+      let content = categoryPostsItem[j].dataset.tab;
+      if (id != content && id != "all") {
+        categoryPostsItem[j].style.display = "none"
+      } else if (id == "all") {
+        categoryPostsItem[j].style.display = "block"
+      } else {
+        categoryPostsItem[j].style.display = "block"
+      }
+      
+    }
+  });
+}
+
+
+
+
+
 // МОБИЛЬНОЕ МЕНЮ
 
 let burger = document.querySelector(".burger");
-let menu = document.querySelector(".site-nav");
+let menu = document.querySelector(".menu");
 
 
 burger.onclick = function() {
-  menu.classList.toggle("site-nav__wrapper--open");
+  menu.classList.toggle("menu--open");
   burger.classList.toggle("burger--active");
 };
 
@@ -110,4 +139,7 @@ postsButtonLeft.addEventListener("click", function() {
   let scrollLeft = postItems[0].clientWidth
   postsList.scrollLeft -= scrollLeft
 });
+
+
+
 
